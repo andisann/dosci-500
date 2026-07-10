@@ -11,8 +11,8 @@ always @(posedge clk or negedge rst_n) begin
         rst_mid <= 1'b0;
         rst_end <= 1'b0;
     end else begin
-        rst_mid <= 1'b1;
-        rst_end <= 1'b1;
+        rst_end <= rst_mid;
+        rst_mid <= 1'b1; 
     end
 end
 
