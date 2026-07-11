@@ -4,9 +4,6 @@
  */
 
 `default_nettype none
-`include "sreset.v"
-`include "DOSCI500.v"
-`include "TX115.v"
 
 module tt_um_dosci_500hz(
     input  wire [7:0] ui_in,    // Dedicated inputs
