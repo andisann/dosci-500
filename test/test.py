@@ -64,7 +64,7 @@ async def test_project(dut):
     dut._log.info("Listening for incoming UART packets on uo_out[0]...")
     
     captured_bytes = []
-    for count in range(5):
+    for count in range(30):
         byte_out = await read_uart_byte(dut, BIT_TIME_NS)
         captured_bytes.append(byte_out)
         
