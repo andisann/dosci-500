@@ -74,7 +74,7 @@ async def test_project(dut):
 
         # 3. Read the INTERNAL math register directly out of the verilog hierarchy!
         # .integer handles 2's complement conversion automatically if marked signed in verilog
-        internal_s_val = dut.u_dosci500.s.value.integer
+        internal_s_val = dut.uio_out.integer
 
         dut._log.info(f"Sample {count+1}: UART Received = {signed_uart_val} | Internal S = {internal_s_val}")
 
