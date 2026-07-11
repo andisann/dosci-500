@@ -61,7 +61,7 @@ async def test_project(dut):
 
     # --- Capture and Decode Loop ---
     # We will capture the first 5 characters transmitted by our oscillator module
-    dut._log.info("Listening for incoming UART packets on uio_out[0]...")
+    dut._log.info("Listening for incoming UART packets on uo_out[0]...")
     
     captured_bytes = []
     for count in range(5):
