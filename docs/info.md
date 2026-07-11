@@ -9,12 +9,13 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+The project is a simple Digital Oscillator that outputs a waveform of 500 Hz via UART(115200 bps 8n1). The system has an asyncronous reset (assert) but synchronous assert.
+The internal comms between the osci and the tx115 is done via AXI4-Lite.
 
 ## How to test
 
-Explain how to use your project
+Just clock the circuit after a reset and look at what you get at the output, is it a sinusoid with T = 2 ms?
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware, only possibility to send data to pc via uart.
