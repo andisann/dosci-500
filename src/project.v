@@ -27,7 +27,22 @@ module tt_um_dosci_500hz (
       .AXIS_ARESETN(AXIS_ARESETN)
   );
 
-  
+  DOSCI500 u_dosci500 (
+      .AXIS_ARESETN(AXIS_ARESETN),
+      .AXIS_ACLK(clk),
+      .M_AXIS_TDATA(AXIS_TDATA),
+      .M_AXIS_TVALID(AXIS_TVALID),
+      .M_AXIS_TREADY(AXIS_TREADY)
+  );
+
+  TX115 u_tx115 (
+      .AXIS_ARESETN(AXIS_ARESETN),
+      .AXIS_ACLK(clk),
+      .S_AXIS_TDATA(AXIS_TDATA),
+      .S_AXIS_TVALID(AXIS_TVALID),
+      .S_AXIS_TREADY(AXIS_TREADY),
+      .TX_232(uio_out[0])
+  );
 
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out[7:1]  = 7'b0;
