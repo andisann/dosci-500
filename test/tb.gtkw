@@ -1,39 +1,53 @@
 [*]
-[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon Nov 20 16:00:28 2023
+[*] GTKWave Analyzer v4.0.0-prealpha (7d7b4db) (w)1999-2022 BSI
+[*] Sat Jul 11 19:56:48 2026
 [*]
-[dumpfile] "/home/uri/p/tt-new-template-proto/test/tb.fst"
-[dumpfile_mtime] "Mon Nov 20 15:58:34 2023"
-[dumpfile_size] 1110
-[savefile] "/home/uri/p/tt-new-template-proto/test/tb.gtkw"
+[dumpfile] "/foss/designs/Digital_Projects_Sky130A/dosci-500/test/tb.vcd"
+[dumpfile_mtime] "Sat Jul 11 18:37:15 2026"
+[dumpfile_size] 32514
+[savefile] "/foss/designs/Digital_Projects_Sky130A/dosci-500/test/tb.gtkw"
 [timestart] 0
-[size] 1376 600
+[size] 1571 815
 [pos] -1 -1
-*-24.534533 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-26.586012 250240000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [treeopen] tb.
-[sst_width] 297
-[signals_width] 230
+[treeopen] tb.user_project.
+[sst_width] 276
+[signals_width] 167
 [sst_expanded] 1
-[sst_vpaned_height] 158
+[sst_vpaned_height] 225
 @28
-tb.user_project.ena
+tb.clk
+tb.ena
+tb.rst_n
+tb.user_project.u_sreset.rst_mid
+tb.user_project.u_sreset.rst_end
+tb.user_project.u_sreset.AXIS_ARESETN
+@200
+-DOSCI500
+@28
+tb.user_project.u_dosci500.enable
+@820
+tb.user_project.u_dosci500.state
+@28
+tb.user_project.u_dosci500.M_AXIS_TVALID
+@24
+tb.user_project.u_dosci500.cnt_reg[12:0]
+@420
+tb.user_project.u_dosci500.y_aux[7:0]
+tb.user_project.u_dosci500.s[7:0]
+@24
+tb.user_project.u_dosci500.sc[15:0]
+tb.user_project.u_dosci500.sc_trunc[7:0]
+@420
+tb.user_project.u_dosci500.x_aux[7:0]
 @29
-tb.user_project.clk
+tb.user_project.u_dosci500.M_AXIS_TDATA[7:0]
+@200
+-TX115
 @28
-tb.user_project.rst_n
-@200
--Inputs
-@22
-tb.user_project.ui_in[7:0]
-@200
--Bidirectional Pins
-@22
-tb.user_project.uio_in[7:0]
-tb.user_project.uio_oe[7:0]
-tb.user_project.uio_out[7:0]
-@200
--Output Pins
-@22
-tb.user_project.uo_out[7:0]
+tb.user_project.u_tx115.S_AXIS_TREADY
+tb.user_project.u_tx115.en
+tb.user_project.u_tx115.TX_232
 [pattern_trace] 1
 [pattern_trace] 0
