@@ -16,12 +16,25 @@ module tt_um_dosci_500hz (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+  wire AXIS_ARESETN;
+  wire AXIS_TVALID;
+  wire AXIS_TREADY;
+  wire signed [7:0] AXIS_TDATA;
+  // Instantiate the Modules
+  sreset u_sreset (
+      .clk(clk),
+      .rst_n(rst_n),
+      .AXIS_ARESETN(AXIS_ARESETN)
+  );
+
+  
+
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+  assign uo_out[7:1]  = 7'b0;
   assign uio_out = 0;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
 
-endmodule
+endmodule // tt_um_dosci_500hz

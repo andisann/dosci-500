@@ -1,7 +1,7 @@
-module tx115 (
+module TX115(
     input        AXIS_ARESETN, // Active-low reset
     input        AXIS_ACLK,    // 50 MHz Clock
-    input  [7:0] S_AXIS_TDATA, 
+    input signed [7:0] S_AXIS_TDATA, 
     input        S_AXIS_TVALID,
     output       S_AXIS_TREADY,
     output       TX_232        // 115200 bps serial line
