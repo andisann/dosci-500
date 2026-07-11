@@ -4,6 +4,9 @@
  */
 
 `default_nettype none
+`include "sreset.v"
+`include "DOSCI500.v"
+`include "TX115.v"
 
 module tt_um_dosci_500hz(
     input  wire [7:0] ui_in,    // Dedicated inputs
@@ -41,7 +44,7 @@ module tt_um_dosci_500hz(
       .S_AXIS_TDATA(AXIS_TDATA),
       .S_AXIS_TVALID(AXIS_TVALID),
       .S_AXIS_TREADY(AXIS_TREADY),
-      .TX_232(uio_out[0])
+      .TX_232(uo_out[0])
   );
 
   // All output pins must be assigned. If not used, assign to 0.
@@ -50,6 +53,6 @@ module tt_um_dosci_500hz(
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, ui_in, uio_in, 1'b0,};
 
 endmodule // tt_um_dosci_500hz
