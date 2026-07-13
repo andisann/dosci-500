@@ -34,6 +34,11 @@ async def read_uart_byte(dut, bit_time_ns):
         # Wait 1 bit period to transition to the middle of the next bit
         await Timer(bit_time_ns, unit="ns")
 
+    await Timer(bit_time_ns, unit="ns") # Wait for the stop bit (not strictly necessary, but good practice)
+    stop_bit_val = int(dut.uo_out.value[0])
+    if stop_bit_val == 0:
+        dut._log.info("Error: Stop bit was '0'!")
+        return None  # This acts like VHDL's tx_data <= (others => 'X')
     return received_byte
 
 
@@ -68,7 +73,8 @@ async def test_project(dut):
     for count in range(500):
         # 1. Capture the byte sent through the external physical UART pin
         byte_out = await read_uart_byte(dut, BIT_TIME_NS)
-        
+        if byte_out is None:
+            raise AssertionError(f"Sample {count+1} failed due to a UART framing error (invalid stop bit)!")
         # 2. Convert raw 8-bit unsigned integer to an 8-bit signed integer
         signed_uart_val = byte_out if byte_out < 128 else byte_out - 256
 
