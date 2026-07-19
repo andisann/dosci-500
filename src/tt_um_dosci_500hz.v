@@ -47,9 +47,9 @@ module tt_um_dosci_500hz(
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out[7:1]  = 7'b0;
   assign uio_out = AXIS_TDATA;
-  assign uio_oe  = 8'bff; // All IOs are outputs
+  assign uio_oe  = 8'hff; // All IOs are outputs
   
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, uo_in, ui_in, 1'b0};
+  wire _unused = &{ena, uio_in, ui_in, 1'b0};
 
 endmodule // tt_um_dosci_500hz
